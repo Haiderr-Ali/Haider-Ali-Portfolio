@@ -76,8 +76,8 @@ const Navbar = () => {
   onClick={() => setIsMenuOpen(!isMenuOpen)}
   style={{
     background: isMenuOpen
-      ? 'linear-gradient(135deg, #ff7e5f, #feb47b)'
-      : 'linear-gradient(135deg, #6a11cb, #2575fc)',
+    ? 'linear-gradient(135deg, #ff7e5f, #feb47b)'
+    : 'linear-gradient(135deg, #1e3c72, #2a5298)', // Blue shades gradient
   }}
   whileHover={{
     scale: 1.1,
