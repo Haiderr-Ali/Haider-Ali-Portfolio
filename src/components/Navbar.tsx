@@ -21,7 +21,7 @@ const Navbar = () => {
     { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
     
-    { name: '⬇ Resume', href: '/public/resume.pdf' }
+    // { name: '⬇ Resume', href: '/public/resume.pdf' }
   ];
 
   return (
@@ -70,15 +70,29 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className={`md:hidden p-2 rounded-lg ${
-              isScrolled ? 'text-gray-900' : 'text-white'
-            }`}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </motion.button>
+  className={`md:hidden p-2 rounded-lg transition-all duration-300 ${
+    isScrolled ? 'text-gray-900' : 'text-white'
+  }`}
+  onClick={() => setIsMenuOpen(!isMenuOpen)}
+  style={{
+    background: isMenuOpen
+      ? 'linear-gradient(135deg, #ff7e5f, #feb47b)'
+      : 'linear-gradient(135deg, #6a11cb, #2575fc)',
+  }}
+  whileHover={{
+    scale: 1.1,
+    rotate: isMenuOpen ? 90 : 0,
+    boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.3)',
+  }}
+  whileTap={{
+    scale: 0.9,
+    rotate: isMenuOpen ? -90 : 0,
+    boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.2)',
+  }}
+>
+  {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+</motion.button>
+
         </div>
 
         {/* Mobile Navigation */}
